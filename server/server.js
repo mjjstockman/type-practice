@@ -42,7 +42,6 @@ let rooms = {
   },
 };
 
-// Helper function to create a Daily.co video room
 async function createDailyRoom() {
   const response = await fetch('https://api.daily.co/v1/rooms', {
     method: 'POST',
@@ -52,7 +51,7 @@ async function createDailyRoom() {
     },
     body: JSON.stringify({
       properties: {
-        exp: Math.round(Date.now() / 1000) + 60 * 30, // Room expires in 30 minutes
+        exp: Math.round(Date.now() / 1000) + 60 * 30,
       },
     }),
   });
